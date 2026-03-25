@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elma Farmstay – Slow Living, Natural Pool & Farm Experience</title>
+
+<!-- SEO & Social -->
+<meta name="description" content="Elma Farmstay Klang — Pengalaman farmstay dengan natural pool tanpa klorin, kebun sayuran berlabel & kehidupan desa untuk keluarga. Kg Rantau Panjang, Selangor.">
+<meta name="keywords" content="farmstay klang, natural pool malaysia, homestay selangor, slow living, farm experience, kolam semulajadi">
+<meta property="og:title" content="Elma Farmstay – Slow Living, Natural Pool & Farm Experience">
+<meta property="og:description" content="Bukan sekadar homestay — natural pool tanpa klorin, kebun berlabel, dan pengalaman desa untuk keluarga moden.">
+<meta property="og:image" content="https://elmafarmstay.com/media/pool_new2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://elmafarmstay.com">
+<meta property="og:type" content="website">
+<link rel="icon" href="media/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="media/logo.png">
+
+<!-- Preload critical assets -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --earth: #8b6f47;
+    --moss: #4a6741;
+    --forest: #2d4a28;
+    --water: #6b9aaa;
+    --water-light: #a8c8d4;
+    --stone: #9e9180;
+    --dark: #1e1e1b;
+    --gold: #c9a84c;
+    --nav-height: 65px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  img { image-rendering:-webkit-optimize-contrast; image-rendering:crisp-edges; -webkit-backface-visibility:hidden; backface-visibility:hidden; transform:translateZ(0); }
+  video { -webkit-backface-visibility:hidden; backface-visibility:hidden; transform:translateZ(0); }
+  html { scroll-behavior:smooth; scroll-padding-top:var(--nav-height); }
+  body { background:var(--cream); color:var(--dark); font-family:'Lora',serif; overflow-x:hidden; }
+
+  /* FOCUS */
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 4rem;
+    background:rgba(245,240,232,0.92); backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(139,111,71,0.12);
+    transition:box-shadow 0.3s;
+    height:var(--nav-height);
+  }
+  .nav-logo { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--forest); display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+  .nav-logo img { height:40px; width:auto; object-fit:contain; }
+  .nav-logo-text { font-family:'Playfair Display',serif; font-size:1.1rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest); padding-left:0.8rem; margin-left:0.4rem; border-left:1px solid rgba(45,74,40,0.2); }
+  .nav-logo-text em { font-style:italic; color:var(--gold); letter-spacing:0.1em; text-transform:none; margin-left:0.4rem; }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); text-decoration:none; transition:color 0.3s; }
+  .nav-links a:hover { color:var(--forest); }
+  .nav-cta { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--forest); color:var(--cream); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.3s; }
+  .nav-cta:hover { background:var(--moss); }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+    z-index:101;
+  }
+  .nav-hamburger span {
+    width:22px; height:2px;
+    background:var(--forest);
+    transition:all 0.3s;
+    display:block;
+  }
+  .nav-hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.active span:nth-child(2) { opacity:0; }
+  .nav-hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+  /* HERO */
+  .hero { height:100vh; position:relative; display:flex; align-items:flex-end; overflow:hidden; }
+  .hero-video-wrap { position:absolute; inset:0; background:var(--dark); }
+  .hero-video-wrap video { width:100%; height:100%; object-fit:cover; opacity:0.65; filter:contrast(1.08) saturate(1.12) brightness(1.02); }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(18,28,16,0.94) 0%, rgba(18,28,16,0.4) 50%, rgba(18,28,16,0.1) 100%); }
+  .hero-content { position:relative; z-index:2; padding:0 4rem 5rem; max-width:820px; animation:fadeUp 1.2s ease both; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+  .hero-tag { font-family:'DM Mono',monospace; font-size:0.67rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--water-light); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.8rem; }
+  .hero-tag::before { content:''; display:inline-block; width:34px; height:1px; background:var(--water-light); }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,6.5vw,5.5rem); line-height:1.08; color:var(--cream); margin-bottom:1.2rem; }
+  .hero h1 em { font-style:italic; color:var(--gold); }
+  .hero-desc { font-size:1rem; line-height:1.85; color:rgba(245,240,232,0.7); max-width:450px; margin-bottom:2.5rem; }
+  .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn-primary { font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; background:var(--gold); color:var(--dark); padding:1rem 2rem; text-decoration:none; transition:all 0.3s; }
+  .btn-primary:hover { background:var(--cream); }
+  .btn-ghost { font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid rgba(245,240,232,0.4); color:var(--cream); padding:1rem 2rem; text-decoration:none; transition:all 0.3s; }
+  .btn-ghost:hover { border-color:var(--cream); background:rgba(245,240,232,0.05); }
+  .hero-badges { position:absolute; right:4rem; bottom:4rem; display:flex; flex-direction:column; gap:0.6rem; align-items:flex-end; animation:fadeUp 1.4s ease 0.4s both; z-index:2; }
+  .badge { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(245,240,232,0.08); border:1px solid rgba(245,240,232,0.15); color:var(--cream); padding:0.38rem 0.8rem; backdrop-filter:blur(4px); }
+
+  /* STRIP */
+  .intro-strip { background:var(--dark); padding:1.7rem 4rem; display:flex; gap:2.5rem; flex-wrap:wrap; justify-content:center; border-top:2px solid var(--gold); }
+  .strip-item { font-family:'DM Mono',monospace; font-size:0.64rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.52); display:flex; align-items:center; gap:0.6rem; }
+  .strip-item .dot { width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+  /* SECTIONS */
+  section { padding:6rem 4rem; }
+  .section-tag { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin-bottom:0.85rem; display:flex; align-items:center; gap:0.8rem; }
+  .section-tag::before { content:''; display:inline-block; width:26px; height:1px; background:var(--stone); }
+  h2 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.1rem); line-height:1.15; color:var(--forest); }
+
+  /* ABOUT */
+  .about { background:var(--cream); }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; margin-top:3rem; align-items:center; }
+  .about-text p { margin-top:1rem; font-size:1rem; line-height:1.9; color:#4a4035; }
+  .about-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2.5rem; padding:2rem; background:var(--forest); }
+  .stat-num { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--gold); line-height:1; }
+  .stat-label { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.48); margin-top:0.3rem; }
+  .entrance-photo { position:relative; }
+  .entrance-photo img { width:100%; display:block; object-fit:cover; aspect-ratio:3/4; }
+  .entrance-photo::after { content:''; position:absolute; top:-10px; left:-10px; right:10px; bottom:10px; border:1px solid var(--moss); z-index:-1; }
+  .entrance-caption { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(18,28,16,0.85),transparent); padding:2rem 1.5rem 1.2rem; font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,240,232,0.65); }
+
+  /* GALLERY */
+  .gallery-strip { display:grid; grid-template-columns:1.4fr 1fr; gap:3px; height:500px; }
+  .g-full { overflow:hidden; }
+  .g-full img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; display:block; }
+  .g-full:hover img { transform:scale(1.04); }
+
+  /* POOL */
+  .pool-section { background:#17272d; padding:6rem 4rem; }
+  .pool-section .section-tag { color:var(--water-light); }
+  .pool-section .section-tag::before { background:var(--water-light); }
+  .pool-section h2 { color:var(--cream); }
+  .pool-video-hero { margin-top:3rem; position:relative; aspect-ratio:16/9; overflow:hidden; cursor:pointer; background:#111; }
+  .pool-video-hero video { width:100%; height:100%; object-fit:cover; display:block; transition:opacity 0.4s; }
+  .pool-video-hero:hover video { opacity:0.88; }
+  .pool-video-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,28,16,0.65) 0%,transparent 50%); display:flex; align-items:center; justify-content:center; pointer-events:none; }
+  .pool-play-btn { width:72px; height:72px; border:2px solid rgba(245,240,232,0.7); border-radius:50%; display:flex; align-items:center; justify-content:center; color:rgba(245,240,232,0.85); font-size:1.5rem; transition:all 0.3s; background:rgba(18,28,16,0.3); backdrop-filter:blur(4px); }
+  .pool-video-hero:hover .pool-play-btn { background:rgba(245,240,232,0.15); border-color:var(--cream); transform:scale(1.08); }
+  .pool-video-caption { position:absolute; bottom:1.5rem; left:2rem; font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.65); }
+  .pool-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:3rem; align-items:start; }
+  .pool-desc { font-size:1rem; line-height:1.88; color:rgba(245,240,232,0.7); margin-top:1rem; }
+  .pool-features { margin-top:0; }
+  .pool-feature { display:flex; align-items:flex-start; gap:1rem; padding:1rem 0; border-bottom:1px solid rgba(107,154,170,0.1); }
+  .pool-feature:first-child { padding-top:0; }
+  .pool-icon { font-size:1.1rem; flex-shrink:0; margin-top:0.1rem; }
+  .pool-feature-text h4 { font-family:'DM Mono',monospace; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--water-light); margin-bottom:0.22rem; }
+  .pool-feature-text p { font-size:0.88rem; line-height:1.6; color:rgba(245,240,232,0.5); }
+  .pool-specs { background:rgba(107,154,170,0.07); border:1px solid rgba(107,154,170,0.17); padding:2rem; margin-top:2rem; }
+  .pool-specs h3 { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--water-light); margin-bottom:1.4rem; font-style:italic; }
+  .spec-row { display:flex; justify-content:space-between; padding:0.7rem 0; border-bottom:1px solid rgba(107,154,170,0.07); font-size:0.87rem; }
+  .spec-key { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.36); }
+  .spec-val { color:var(--cream); }
+  .pool-photo-pair { display:grid; grid-template-columns:1fr 1fr; gap:3px; margin-top:3px; }
+  .pool-photo-pair img { width:100%; display:block; object-fit:cover; aspect-ratio:3/4; transition:transform 0.5s ease; }
+  .pool-photo-pair img:hover { transform:scale(1.03); }
+
+  /* POOL VIDEO SECONDARY */
+  .pool-vid-secondary { display:block; margin-top:3px; position:relative; cursor:pointer; overflow:hidden; }
+  .pool-vid-secondary video { width:100%; display:block; object-fit:cover; aspect-ratio:16/9; }
+  .pool-vid-secondary .play-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+  .pool-vid-secondary .pool-play-btn { width:52px; height:52px; font-size:1rem; }
+
+  /* FARM VIDEO */
+  .farmvid-section { background:var(--forest); }
+  .farmvid-wrap { position:relative; aspect-ratio:16/9; overflow:hidden; cursor:pointer; background:#111; }
+  .farmvid-wrap video { width:100%; height:100%; object-fit:cover; display:block; transition:opacity 0.4s; }
+  .farmvid-wrap:hover video { opacity:0.82; }
+  .farmvid-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,28,16,0.75) 0%,rgba(18,28,16,0.2) 60%,transparent 100%); display:flex; align-items:center; justify-content:center; pointer-events:none; }
+  .farmvid-play { width:72px; height:72px; border:2px solid rgba(245,240,232,0.65); border-radius:50%; display:flex; align-items:center; justify-content:center; color:rgba(245,240,232,0.8); font-size:1.5rem; transition:all 0.3s; background:rgba(18,28,16,0.25); backdrop-filter:blur(4px); }
+  .farmvid-wrap:hover .farmvid-play { background:rgba(245,240,232,0.12); border-color:var(--cream); transform:scale(1.08); }
+  .farmvid-label { position:absolute; bottom:2rem; left:2.5rem; }
+  .farmvid-label h3 { font-family:'Playfair Display',serif; font-size:clamp(1.4rem,3vw,2.2rem); color:var(--cream); font-style:italic; }
+  .farmvid-label p { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.55); margin-top:0.4rem; }
+
+  /* EXPERIENCES */
+  .experiences { background:#f7f3eb; }
+  .exp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:3rem; border:2px solid var(--forest); }
+  .exp-card { background:var(--cream); padding:2.5rem 2rem; border-right:2px solid var(--forest); position:relative; transition:background 0.4s; overflow:hidden; }
+  .exp-card:nth-child(3n) { border-right:none; }
+  .exp-card:nth-child(n+4) { border-top:2px solid var(--forest); }
+  .exp-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:0; background:var(--forest); transition:height 0.4s ease; z-index:0; }
+  .exp-card:hover::after { height:100%; }
+  .exp-card:hover .exp-title, .exp-card:hover .exp-body, .exp-card:hover .exp-num { color:var(--cream); }
+  .exp-card > * { position:relative; z-index:1; }
+  .exp-num { font-family:'Playfair Display',serif; font-size:2.8rem; color:rgba(45,74,40,0.09); line-height:1; margin-bottom:0.4rem; transition:color 0.4s; }
+  .exp-icon { font-size:1.5rem; margin-bottom:0.75rem; }
+  .exp-title { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--forest); margin-bottom:0.65rem; transition:color 0.4s; }
+  .exp-body { font-size:0.87rem; line-height:1.7; color:#5a5040; transition:color 0.4s; }
+
+  /* FARM */
+  .farm { background:var(--forest); }
+  .farm .section-tag { color:rgba(245,240,232,0.42); }
+  .farm .section-tag::before { background:rgba(245,240,232,0.42); }
+  .farm h2 { color:var(--cream); }
+  .farm-intro { color:rgba(245,240,232,0.6); font-size:1rem; line-height:1.8; max-width:560px; margin-top:0.8rem; }
+  .farm-layout { display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-top:3rem; }
+  .farm-photos img { width:100%; display:block; object-fit:cover; aspect-ratio:4/3; transition:transform 0.5s ease; }
+  .farm-photos img:hover { transform:scale(1.03); }
+  .farm-list { display:flex; flex-direction:column; }
+  .farm-item { display:flex; align-items:flex-start; gap:1rem; padding:1.1rem 0; border-bottom:1px solid rgba(245,240,232,0.05); }
+  .farm-item:first-child { padding-top:0; }
+  .farm-emoji-sm { font-size:1.1rem; flex-shrink:0; margin-top:0.1rem; }
+  .farm-item-text h4 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--cream); margin-bottom:0.2rem; }
+  .farm-item-text p { font-size:0.87rem; line-height:1.6; color:rgba(245,240,232,0.48); }
+  .chicken-box { margin-top:3rem; border:1px solid rgba(245,240,232,0.1); display:grid; grid-template-columns:auto 1fr; overflow:hidden; }
+  .chicken-photo { width:280px; overflow:hidden; }
+  .chicken-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+  .chicken-content { padding:2.5rem; }
+  .chicken-content h3 { font-family:'Playfair Display',serif; font-size:1.55rem; color:var(--gold); font-style:italic; }
+  .chicken-content p { color:rgba(245,240,232,0.58); font-size:0.93rem; line-height:1.7; margin-top:0.8rem; max-width:420px; }
+  .chicken-tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1.2rem; }
+  .ctag { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(245,240,232,0.16); color:rgba(245,240,232,0.42); padding:0.28rem 0.65rem; }
+
+  /* ACTIVITIES */
+  .activities { background:#19231a; padding:6rem 4rem; }
+  .activities .section-tag { color:rgba(245,240,232,0.38); }
+  .activities .section-tag::before { background:rgba(245,240,232,0.38); }
+  .act-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(245,240,232,0.05); margin-top:3rem; }
+  .act-group { background:#19231a; padding:2rem 1.8rem; }
+  .act-group-title { font-family:'DM Mono',monospace; font-size:0.63rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(201,168,76,0.18); }
+  .act-list { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+  .act-list li { font-size:0.87rem; line-height:1.5; color:rgba(245,240,232,0.52); display:flex; gap:0.6rem; align-items:flex-start; }
+  .act-list li::before { content:'→'; color:var(--moss); flex-shrink:0; font-size:0.72rem; margin-top:0.12rem; }
+
+  /* PACKAGES */
+  .packages { background:var(--cream); }
+  .pkg-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:3rem; }
+  .pkg-card { border:2px solid var(--forest); padding:3rem; }
+  .pkg-card.featured { background:var(--forest); }
+  .pkg-label { font-family:'DM Mono',monospace; font-size:0.61rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone); margin-bottom:0.5rem; }
+  .pkg-card.featured .pkg-label { color:var(--water-light); }
+  .pkg-name { font-family:'Playfair Display',serif; font-size:1.85rem; color:var(--forest); }
+  .pkg-card.featured .pkg-name { color:var(--gold); }
+  .pkg-tagline { font-size:0.87rem; font-style:italic; color:var(--stone); margin-top:0.3rem; }
+  .pkg-card.featured .pkg-tagline { color:rgba(245,240,232,0.46); }
+  .pkg-price { font-family:'Playfair Display',serif; font-size:3rem; color:var(--gold); line-height:1; margin-top:1.5rem; }
+  .pkg-per { font-family:'DM Mono',monospace; font-size:0.61rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); }
+  .pkg-card.featured .pkg-per { color:rgba(245,240,232,0.42); }
+  .pkg-divider { border:none; border-top:1px solid rgba(45,74,40,0.12); margin:1.8rem 0; }
+  .pkg-card.featured .pkg-divider { border-color:rgba(245,240,232,0.08); }
+  .pkg-includes { list-style:none; display:flex; flex-direction:column; gap:0.78rem; margin-bottom:2rem; }
+  .pkg-includes li { font-size:0.89rem; line-height:1.5; color:#4a4035; display:flex; gap:0.8rem; align-items:flex-start; }
+  .pkg-card.featured .pkg-includes li { color:rgba(245,240,232,0.75); }
+  .pkg-includes li::before { content:'✦'; color:var(--gold); flex-shrink:0; font-size:0.63rem; margin-top:0.25rem; }
+  .pkg-btn { display:block; font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; text-align:center; text-decoration:none; padding:1rem; transition:all 0.3s; }
+  .pkg-btn-outline { border:2px solid var(--forest); color:var(--forest); }
+  .pkg-btn-outline:hover { background:var(--forest); color:var(--cream); }
+  .pkg-btn-solid { background:var(--gold); color:var(--dark); }
+  .pkg-btn-solid:hover { background:var(--cream); }
+  .pkg-note { margin-top:2rem; padding:1.4rem 2rem; background:#ede9df; border-left:3px solid var(--moss); }
+  .pkg-note-title { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); }
+  .pkg-note p { margin-top:0.4rem; font-size:0.89rem; color:#4a4035; line-height:1.6; }
+
+  /* AVAILABILITY */
+  .availability { background:#f0ece2; }
+  .avail-intro { font-size:1rem; line-height:1.8; color:#4a4035; margin-top:0.8rem; max-width:560px; }
+  .avail-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:4rem; margin-top:3rem; align-items:start; }
+  .avail-info { display:flex; flex-direction:column; gap:1rem; }
+  .avail-note { background:var(--forest); color:var(--cream); padding:1.5rem 2rem; }
+  .avail-note h4 { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem; }
+  .avail-note p { font-size:0.88rem; line-height:1.6; color:rgba(245,240,232,0.7); }
+  .calendar-frame { background:#fff; border:1px solid rgba(45,74,40,0.12); overflow:hidden; }
+  .calendar-frame iframe { display:block; width:100%; border:none; }
+
+  /* STORY */
+  .story { background:var(--dark); padding:6rem 4rem; text-align:center; }
+  .story-quote { font-family:'Playfair Display',serif; font-size:clamp(1.35rem,3vw,2.2rem); font-style:italic; color:var(--cream); line-height:1.6; max-width:760px; margin:0 auto; position:relative; }
+  .story-quote::before { content:'"'; font-size:7rem; color:rgba(201,168,76,0.1); position:absolute; top:-2rem; left:-1.5rem; line-height:1; font-family:'Playfair Display',serif; }
+  .story-attr { margin-top:2.5rem; font-family:'DM Mono',monospace; font-size:0.64rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
+  .story-attr span { color:rgba(245,240,232,0.32); }
+
+  /* LOCATION */
+  .location { background:#ede9df; }
+  .loc-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:5rem; margin-top:3rem; align-items:start; }
+  .loc-info p { font-size:1rem; line-height:1.8; color:#4a4035; margin-top:0.8rem; }
+  .loc-details { margin-top:2rem; display:flex; flex-direction:column; gap:0.8rem; }
+  .loc-item { display:flex; gap:1rem; align-items:flex-start; padding:1rem; background:var(--cream); border-left:3px solid var(--moss); }
+  .loc-item-icon { font-size:1rem; flex-shrink:0; }
+  .loc-item-text h4 { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:0.2rem; }
+  .loc-item-text p { font-size:0.9rem; color:var(--dark); }
+  .map-placeholder { background:linear-gradient(135deg,#2d4a28,#1a3028); aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; color:rgba(245,240,232,0.52); font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:opacity 0.3s; }
+  .map-placeholder:hover { opacity:0.82; }
+  .map-placeholder .map-icon { font-size:2.5rem; }
+  .map-placeholder span { color:var(--gold); }
+
+  /* CTA */
+  .cta-section { background:var(--gold); padding:5rem 4rem; text-align:center; }
+  .cta-section h2 { color:var(--dark); font-size:clamp(2rem,5vw,3.1rem); }
+  .cta-section p { font-size:1rem; color:rgba(30,30,27,0.65); margin:1.2rem auto 2.5rem; max-width:440px; line-height:1.7; }
+  .cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+  .cta-btn-dark { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; background:var(--dark); color:var(--cream); padding:1rem 2.5rem; text-decoration:none; transition:background 0.3s; }
+  .cta-btn-dark:hover { background:var(--forest); }
+  .cta-btn-out { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; border:2px solid var(--dark); color:var(--dark); padding:1rem 2.5rem; text-decoration:none; transition:all 0.3s; }
+  .cta-btn-out:hover { background:var(--dark); color:var(--cream); }
+
+  /* FOOTER */
+  footer { background:var(--dark); padding:3rem 4rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; border-top:1px solid rgba(245,240,232,0.04); }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--cream); display:flex; align-items:center; gap:0.5rem; text-decoration:none; }
+  .footer-logo img { height:36px; width:auto; object-fit:contain; }
+  .footer-logo-text { font-family:'Playfair Display',serif; font-size:1rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream); padding-left:0.8rem; margin-left:0.4rem; border-left:1px solid rgba(245,240,232,0.15); }
+  .footer-logo-text em { font-style:italic; color:var(--gold); letter-spacing:0.1em; text-transform:none; margin-left:0.4rem; }
+  .footer-links { display:flex; gap:2rem; flex-wrap:wrap; }
+  .footer-links a { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,240,232,0.3); text-decoration:none; transition:color 0.3s; }
+  .footer-links a:hover { color:var(--cream); }
+  .footer-copy { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.08em; color:rgba(245,240,232,0.18); }
+
+  /* FLOATING WHATSAPP */
+  .wa-float {
+    position:fixed;
+    bottom:2rem;
+    right:2rem;
+    width:56px; height:56px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+    text-decoration:none;
+    box-shadow:0 4px 20px rgba(37,211,102,0.35);
+    z-index:99;
+    transition:transform 0.3s;
+    animation:waPulse 2s infinite;
+  }
+  .wa-float:hover { transform:scale(1.1); }
+  @keyframes waPulse {
+    0%,100% { box-shadow:0 4px 20px rgba(37,211,102,0.35); }
+    50% { box-shadow:0 4px 30px rgba(37,211,102,0.55); }
+  }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity 0.8s ease,transform 0.8s ease; will-change:opacity,transform; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media(max-width:960px) {
+    nav { padding:1rem 1.5rem; }
+    .nav-hamburger { display:flex; }
+    .nav-links {
+      display:none;
+      position:absolute;
+      top:100%; left:0; right:0;
+      flex-direction:column;
+      background:rgba(245,240,232,0.97);
+      backdrop-filter:blur(14px);
+      padding:1.5rem 2rem;
+      gap:1.2rem;
+      border-bottom:1px solid rgba(139,111,71,0.12);
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    }
+    .nav-links.open { display:flex; }
+    section, .pool-section, .farm, .activities, .story, .location, .cta-section { padding:4rem 1.5rem; }
+    .hero-content { padding:0 1.5rem 4rem; }
+    .hero-badges { right:1.5rem; bottom:1.5rem; }
+    .about-grid, .pool-grid, .pkg-grid, .loc-grid, .farm-layout, .avail-grid { grid-template-columns:1fr; gap:2.5rem; }
+    .gallery-strip { height:auto; grid-template-columns:1fr; }
+    .g-full img { aspect-ratio:16/9; height:auto; }
+    .exp-grid { grid-template-columns:1fr 1fr; }
+    .exp-card { border-right:none; border-bottom:2px solid var(--forest); }
+    .exp-card:nth-child(odd) { border-right:2px solid var(--forest); }
+    .exp-card:nth-child(even) { border-right:none; }
+    .exp-card:nth-child(n+3) { border-top:none; }
+    .exp-card:nth-child(5), .exp-card:nth-child(6) { border-bottom:none; }
+    .exp-card:last-child { border-bottom:none; border-right:none; }
+    .act-grid { grid-template-columns:1fr 1fr; }
+    .chicken-box { grid-template-columns:1fr; }
+    .chicken-photo { width:100%; height:280px; }
+    footer { flex-direction:column; text-align:center; padding:2rem 1.5rem; }
+    .intro-strip { padding:1.5rem; gap:1.2rem; }
+    .pkg-grid { grid-template-columns:1fr; }
+    .pool-photo-pair { grid-template-columns:1fr 1fr; }
+    .wa-float { bottom:1.2rem; right:1.2rem; width:50px; height:50px; font-size:1.4rem; }
+  }
+
+  @media(max-width:600px) {
+    .hero h1 { font-size:clamp(2rem,8vw,3rem); }
+    .hero-badges { display:none; }
+    .exp-grid { grid-template-columns:1fr; }
+    .exp-card { border-right:none !important; }
+    .act-grid { grid-template-columns:1fr; }
+    .about-stats { grid-template-columns:1fr 1fr; gap:1rem; padding:1.5rem; }
+    .pool-photo-pair { grid-template-columns:1fr; }
+    .intro-strip { flex-direction:column; align-items:center; gap:0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <img src="media/logo.png" alt="Elma Farmstay">
+    <span class="nav-logo-text">Elma <em>Farmstay</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#pool" onclick="closeNav()">Natural Pool</a></li>
+    <li><a href="#farm" onclick="closeNav()">Farm</a></li>
+    <li><a href="#packages" onclick="closeNav()">Packages</a></li>
+    <li><a href="#availability" onclick="closeNav()">Availability</a></li>
+    <li><a href="#location" onclick="closeNav()">Lokasi</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="https://wa.me/+601112044594?text=ELMAfarmstay" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline poster="media/pool_new2.jpg" aria-label="Video suasana Elma Farmstay">
+      <source src="media/IMG_6633.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Kg Rantau Panjang, Klang · Selangor</div>
+    <h1>Slow Down.<br><em>Live Deep.</em><br>Farm & Stay.</h1>
+    <p class="hero-desc">Bukan sekadar homestay — pengalaman dengan natural pool tanpa klorin, kebun sayuran berlabel, dan kehidupan desa yang sengaja direka untuk keluarga moden.</p>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-primary">Lihat Pakej</a>
+      <a href="#pool" class="btn-ghost">Natural Pool →</a>
+    </div>
+  </div>
+  <div class="hero-badges">
+    <div class="badge">✦ Natural Pool – No Chlorine</div>
+    <div class="badge">✦ Working Farm</div>
+    <div class="badge">✦ Family Exclusive</div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="intro-strip">
+  <div class="strip-item"><span class="dot"></span>1/3 Ekar Tanah</div>
+  <div class="strip-item"><span class="dot"></span>Natural Pool + Stream + Waterfall</div>
+  <div class="strip-item"><span class="dot"></span>3 Bilik Tidur / Unit</div>
+  <div class="strip-item"><span class="dot"></span>Sehingga 18 Pax Exclusive</div>
+  <div class="strip-item"><span class="dot"></span>Full Farm Experience</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="reveal">
+    <div class="section-tag">Our Story</div>
+    <h2>Dari Engineer Jepun<br>ke Farmstay Owner</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>Elma Farmstay lahir daripada satu perjalanan yang luar biasa — meninggalkan kehidupan kejuruteraan di Jepun untuk kembali ke tanah, membangun sesuatu yang bermakna untuk keluarga dan komuniti.</p>
+      <p>Di atas 1/3 ekar di Kg Rantau Panjang, kami reka sebuah tempat yang membenarkan keluarga bandar untuk bernafas semula. Setiap detail — dari pintu kayu besar di pintu masuk, natural pool batu, kebun sayuran berlabel, hingga reban ayam — dibina dengan tangan sendiri, penuh niat.</p>
+      <p>Ini bukan sekadar tempat menginap. Ini adalah pengalaman yang mengubah perspektif tentang hidup dan alam.</p>
+      <div class="about-stats">
+        <div><div class="stat-num">2</div><div class="stat-label">Unit Homestay</div></div>
+        <div><div class="stat-num">3k</div><div class="stat-label">Followers · 3 Hari</div></div>
+        <div><div class="stat-num">18</div><div class="stat-label">Pax Exclusive</div></div>
+        <div><div class="stat-num">1/3</div><div class="stat-label">Ekar Farm</div></div>
+      </div>
+    </div>
+    <div class="entrance-photo">
+      <img src="media/entrance.jpg" alt="Pintu masuk Elma Farmstay dengan pintu kayu besar" width="600" height="800" loading="lazy" decoding="async">
+      <div class="entrance-caption">Pintu masuk · Elma Farmstay · Klang</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery-strip">
+  <div class="g-full">
+    <img src="media/pool_new2.jpg" alt="Natural pool Elma dengan pantulan pokok" loading="lazy" decoding="async">
+  </div>
+  <div class="g-full">
+    <img src="media/pool_new1.jpg" alt="Stream batu natural pool Elma" loading="lazy" decoding="async">
+  </div>
+</div>
+
+<!-- POOL -->
+<section class="pool-section" id="pool">
+  <div class="reveal">
+    <div class="section-tag">Natural Swimming Pool</div>
+    <h2>Mandi Bersih<br>Tanpa Klorin</h2>
+  </div>
+  <div class="pool-video-hero reveal" role="button" tabindex="0" aria-label="Play/pause pool video" onclick="toggleVid(this)" onkeydown="if(event.key==='Enter')toggleVid(this)">
+    <video muted loop playsinline preload="none" poster="media/pool_new2.jpg" aria-label="Video kolam renang semula jadi Elma">
+      <source src="media/IMG_6580.mp4" type="video/mp4">
+    </video>
+    <div class="pool-video-overlay"><div class="pool-play-btn">▶</div></div>
+    <div class="pool-video-caption">Natural Pool · Elma Farmstay</div>
+  </div>
+  <div class="pool-grid reveal">
+    <div>
+      <p class="pool-desc">Sistem kolam semula jadi kami menggunakan bog filter — air jernih, selamat untuk kanak-kanak, mesra alam. Ada stream berbatu, waterfall, dan suasana yang tidak anda temui di resort manapun.</p>
+      <div class="pool-features">
+        <div class="pool-feature"><div class="pool-icon">🌿</div><div class="pool-feature-text"><h4>Bog Filter Natural</h4><p>Tiada bahan kimia — sistem tumbuhan semula jadi menapis air secara organik.</p></div></div>
+        <div class="pool-feature"><div class="pool-icon">💧</div><div class="pool-feature-text"><h4>Stream & Waterfall Batu</h4><p>Aliran air semula jadi melalui batu-batan besar, berakhir dengan waterfall yang menenangkan.</p></div></div>
+        <div class="pool-feature"><div class="pool-icon">👶</div><div class="pool-feature-text"><h4>Selamat untuk Kanak-kanak</h4><p>Kawasan cetek 10" untuk anak kecil, bahagian dalam 2' untuk dewasa.</p></div></div>
+        <div class="pool-feature"><div class="pool-icon">🌙</div><div class="pool-feature-text"><h4>Malam Berbintang di Kolam</h4><p>Boleh guna waktu malam — tiada lampu buatan, hanya cahaya bintang dan bunyi air.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="pool-specs">
+        <h3>Pool Specifications</h3>
+        <div class="spec-row"><span class="spec-key">Main Pool</span><span class="spec-val">200 sq ft</span></div>
+        <div class="spec-row"><span class="spec-key">Stream</span><span class="spec-val">3' × 8'</span></div>
+        <div class="spec-row"><span class="spec-key">Bog Filter</span><span class="spec-val">64 sq ft</span></div>
+        <div class="spec-row"><span class="spec-key">Cetek</span><span class="spec-val">10 inci (kanak-kanak)</span></div>
+        <div class="spec-row"><span class="spec-key">Dalam</span><span class="spec-val">2 kaki</span></div>
+        <div class="spec-row" style="border-bottom:none"><span class="spec-key">Klorin</span><span class="spec-val" style="color:#6b9aaa">Tiada ✦</span></div>
+      </div>
+      <div class="pool-vid-secondary" role="button" tabindex="0" aria-label="Play/pause secondary pool video" onclick="toggleVid(this)" onkeydown="if(event.key==='Enter')toggleVid(this)">
+        <video muted loop playsinline preload="none" poster="media/pool_new2.jpg" aria-label="Video kedua kolam semula jadi">
+          <source src="media/IMG_6541.mp4" type="video/mp4">
+        </video>
+        <div class="play-overlay">
+          <div class="pool-play-btn">▶</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FARM VIDEO -->
+<div class="farmvid-section">
+  <div class="farmvid-wrap" id="farmVideoWrap" role="button" tabindex="0" aria-label="Play/pause farm video" onclick="toggleVid(this)" onkeydown="if(event.key==='Enter')toggleVid(this)">
+    <video muted loop playsinline preload="none" poster="media/veggies.jpg" id="farmVideo" aria-label="Video kehidupan ladang Elma">
+      <source src="media/IMG_6619.mp4" type="video/mp4">
+    </video>
+    <div class="farmvid-overlay"><div class="farmvid-play">▶</div></div>
+    <div class="farmvid-label">
+      <h3>Farm Life</h3>
+      <p>Kebun · Reban · Grounding · Nature</p>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCES -->
+<section class="experiences" id="experiences">
+  <div class="reveal">
+    <div class="section-tag">What You'll Experience</div>
+    <h2>Lebih dari Sekadar<br>Tempat Menginap</h2>
+  </div>
+  <div class="exp-grid reveal">
+    <div class="exp-card"><div class="exp-num">01</div><div class="exp-icon">🌱</div><h3 class="exp-title">Slow Living</h3><p class="exp-body">Tanam pokok, jaga kebun, faham composting. Workshop informal dengan tools dan pamphlet untuk semua umur.</p></div>
+    <div class="exp-card"><div class="exp-num">02</div><div class="exp-icon">👨‍👩‍👧‍👦</div><h3 class="exp-title">Family Bonding</h3><p class="exp-body">Anak explore tanah dan tumbuhan berlabel. Sensory play semula jadi — lumpur, benih, air mengalir.</p></div>
+    <div class="exp-card"><div class="exp-num">03</div><div class="exp-icon">🐓</div><h3 class="exp-title">Farm Life</h3><p class="exp-body">Bagi makan ayam, kutip telur segar, jalan kebun. Bukan zoo — ini kehidupan sebenar yang penuh kenangan.</p></div>
+    <div class="exp-card"><div class="exp-num">04</div><div class="exp-icon">🌊</div><h3 class="exp-title">Natural Pool</h3><p class="exp-body">Berenang dalam air semula jadi. Dengar waterfall batu, segar dari pagi hingga malam berbintang.</p></div>
+    <div class="exp-card"><div class="exp-num">05</div><div class="exp-icon">🔥</div><h3 class="exp-title">BBQ & Outdoor</h3><p class="exp-body">BBQ pit, outdoor kitchen, lounge santai, padang untuk anak berlari — semuanya dalam satu kawasan.</p></div>
+    <div class="exp-card"><div class="exp-num">06</div><div class="exp-icon">⭐</div><h3 class="exp-title">Celebrate Here</h3><p class="exp-body">Birthday, anniversary, atau sekadar malam istimewa — sambut di tempat yang tak biasa, di bawah langit terbuka Elma.</p></div>
+  </div>
+</section>
+
+<!-- FARM -->
+<section class="farm" id="farm">
+  <div class="reveal">
+    <div class="section-tag">The Farm</div>
+    <h2>Dari Tanah ke Meja</h2>
+    <p class="farm-intro">Kebun sayuran dan ulaman berlabel untuk terokai dan pelajari, compost system, dan ayam kampung — semua sebahagian dari pengalaman Elma yang tidak boleh anda temui di homestay biasa.</p>
+  </div>
+  <div class="farm-layout reveal">
+    <div class="farm-photos">
+      <img src="media/veggies.jpg" alt="Sayuran organik berlabel kebun Elma" width="800" height="600" loading="lazy" decoding="async">
+    </div>
+    <div class="farm-list">
+      <div class="farm-item"><div class="farm-emoji-sm">🥬</div><div class="farm-item-text"><h4>Sayuran & Ulaman Berlabel</h4><p>Pelbagai sayur dan ulaman ditanam organik — semua dilabel untuk tetamu terokai dan pelajari sendiri.</p></div></div>
+      <div class="farm-item"><div class="farm-emoji-sm">🌳</div><div class="farm-item-text"><h4>Pokok Buahan Berlabel</h4><p>Durian, jambu, manggis dan lain-lain — semua pokok dilabel untuk pengalaman belajar yang lebih bermakna.</p></div></div>
+      <div class="farm-item"><div class="farm-emoji-sm">♻️</div><div class="farm-item-text"><h4>Compost Bin</h4><p>Kitar semula sisa organik — pelajari asas zero waste gardening dari owner sendiri.</p></div></div>
+      <div class="farm-item"><div class="farm-emoji-sm">🌿</div><div class="farm-item-text"><h4>Workshop (Atas Permintaan)</h4><p>Tools dan pamphlet disediakan. Belajar dari tanam benih hingga harvest sendiri.</p></div></div>
+      <div class="farm-item"><div class="farm-emoji-sm">🚲</div><div class="farm-item-text"><h4>Padang & Basikal</h4><p>Basikal kanak-kanak tersedia. Padang 20×20' untuk aktiviti dan ruang berlari bebas.</p></div></div>
+    </div>
+  </div>
+  <div class="chicken-box reveal">
+    <div class="chicken-photo">
+      <img src="media/chicken.jpg" alt="Ayam kampung reban Elma Farmstay" width="280" height="400" loading="lazy" decoding="async">
+    </div>
+    <div class="chicken-content">
+      <h3>🐓 Reban Ayam Elma</h3>
+      <p>Reban kami ada dua jenis ayam — ayam penelur dan ayam daging. Bagi makan pagi dan kutip telur segar (ikut musim) — momen paling digemari anak-anak yang tak pernah mereka lupakan.</p>
+      <div class="chicken-tags">
+        <span class="ctag">Ayam Penelur</span>
+        <span class="ctag">Ayam Daging</span>
+        <span class="ctag">Bagi Makan Ayam</span>
+        <span class="ctag">Kutip Telur (Musim)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="activities" id="activities">
+  <div class="reveal">
+    <div class="section-tag">Activities</div>
+    <h2 style="color:var(--cream)">Apa Yang Boleh<br>Anda Buat Di Sini</h2>
+  </div>
+  <div class="act-grid reveal">
+    <div class="act-group">
+      <div class="act-group-title">🌿 Nature & Relax</div>
+      <ul class="act-list">
+        <li>Nature walk around the farm</li>
+        <li>Morning sounds of nature</li>
+        <li>Relax at outdoor family lounge</li>
+        <li>Stargazing at night</li>
+        <li>Slow morning coffee in nature</li>
+      </ul>
+    </div>
+    <div class="act-group">
+      <div class="act-group-title">🌊 Pool Experience</div>
+      <ul class="act-list">
+        <li>Swim in natural chemical-free pool</li>
+        <li>Play in the waterfall area</li>
+        <li>Water sensory play for kids</li>
+        <li>Night swim under the stars</li>
+      </ul>
+    </div>
+    <div class="act-group">
+      <div class="act-group-title">🐓 Farm Experience</div>
+      <ul class="act-list">
+        <li>Feed the chickens</li>
+        <li>Collect fresh eggs (seasonal)</li>
+        <li>Walk through the labelled garden</li>
+        <li>Harvest vegetables (seasonal)</li>
+      </ul>
+    </div>
+    <div class="act-group">
+      <div class="act-group-title">🧑‍🌾 Learning & Family</div>
+      <ul class="act-list">
+        <li>Learn plant & vegetable names</li>
+        <li>Introduction to simple gardening</li>
+        <li>Learn about natural bog filter</li>
+        <li>BBQ session & family picnic</li>
+        <li>Photo spots around the farm</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages" id="packages">
+  <div class="reveal">
+    <div class="section-tag">Pricing & Packages</div>
+    <h2>Pilih Pengalaman<br>Anda</h2>
+  </div>
+  <div class="pkg-grid reveal">
+    <div class="pkg-card">
+      <div class="pkg-label">Pakej A</div>
+      <div class="pkg-name">Shared Farmstay</div>
+      <div class="pkg-tagline">Your Luxury Slow Living, Away from the City</div>
+      <div class="pkg-price">RM600</div>
+      <div class="pkg-per">/ malam</div>
+      <hr class="pkg-divider">
+      <ul class="pkg-includes">
+        <li>1 unit homestay — townhouse style</li>
+        <li>3 bilik queen, 2 bilik air, aircond</li>
+        <li>Sesuai untuk 6–9 pax</li>
+        <li>Dapur lengkap + washing machine</li>
+        <li>Full access farm & natural pool</li>
+        <li>Shared spaces (kolam, lounge, BBQ)</li>
+        <li>Parking percuma (20 kereta)</li>
+      </ul>
+      <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20Pakej%20A%20Shared" class="pkg-btn pkg-btn-outline">Tempah Pakej A</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-label">Pakej B — Most Popular</div>
+      <div class="pkg-name">Private Farmstay</div>
+      <div class="pkg-tagline">Entire farmstay exclusively for your group</div>
+      <div class="pkg-price">RM1,200</div>
+      <div class="pkg-per">/ malam</div>
+      <hr class="pkg-divider">
+      <ul class="pkg-includes">
+        <li>2 unit homestay — keseluruhan farmstay</li>
+        <li>6 bilik queen, 4 bilik air, aircond semua</li>
+        <li>Sesuai untuk 6–18 pax</li>
+        <li>2 dapur lengkap + 2 washing machine</li>
+        <li>Full access farm & natural pool — private</li>
+        <li>BBQ pit outdoor + portable</li>
+        <li>Workshop (atas permintaan)</li>
+        <li>Parking percuma hingga 20 kereta</li>
+      </ul>
+      <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20Pakej%20B%20Private" class="pkg-btn pkg-btn-solid">Tempah Pakej B</a>
+    </div>
+  </div>
+  <div class="pkg-note reveal">
+    <div class="pkg-note-title">Nota Penting</div>
+    <p>Harga weekday & weekend adalah sama. Peak season semasa cuti sekolah — tempahan awal sangat digalakkan. Setiap unit max 9 pax.</p>
+  </div>
+</section>
+
+<!-- AVAILABILITY -->
+<section class="availability" id="availability">
+  <div class="reveal">
+    <div class="section-tag">Check Availability</div>
+    <h2>Semak Tarikh<br>Ketersediaan</h2>
+    <p class="avail-intro">Semak terus di sini sebelum WhatsApp kami. Kalendar dikemaskini oleh team Elma secara real-time.</p>
+  </div>
+  <div class="avail-grid reveal">
+    <div class="avail-info">
+      <div style="padding:1.2rem 1.5rem; background:var(--cream); border-left:3px solid var(--earth);">
+        <p style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:0.6rem;">Cara Baca Kalendar</p>
+        <p style="font-size:0.9rem; color:#4a4035; line-height:1.7;">Tarikh ada label <strong>"FULL BOOKED"</strong> — sudah ditempah. Tarikh kosong — masih available. Klik <strong>→</strong> untuk bulan seterusnya.</p>
+      </div>
+      <div class="avail-note">
+        <h4>📅 Nak Tempah?</h4>
+        <p>Pilih tarikh yang kosong, lepas tu terus WhatsApp kami untuk sahkan tempahan.</p>
+        <br>
+        <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20Semak%20Availability" style="display:inline-block; margin-top:0.5rem; font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--gold); color:var(--dark); padding:0.7rem 1.4rem; text-decoration:none;">📱 WhatsApp Sekarang</a>
+      </div>
+      <div style="padding:1.5rem; background:rgba(45,74,40,0.06); border-left:3px solid var(--moss);">
+        <p style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:0.5rem;">Peak Season</p>
+        <p style="font-size:0.9rem; color:#4a4035; line-height:1.6;">Cuti sekolah & cuti umum — tempahan awal sangat digalakkan. Weekday & weekend sama harga.</p>
+      </div>
+    </div>
+    <div class="calendar-frame">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=f0d90ff314be0a24dc7b764654fa4e32bfac5010f90fec8269be8f40e1789bb8%40group.calendar.google.com&ctz=Asia%2FKuala_Lumpur&mode=MONTH&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&bgcolor=%23f5f0e8"
+        style="width:100%; height:600px; border:none;"
+        frameborder="0" scrolling="no"
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        title="Elma Farmstay Availability Calendar">
+        <p>Kalendar tidak dapat dimuatkan. <a href="https://wa.me/+601112044594?text=ELMAfarmstay">WhatsApp kami</a> untuk semak ketersediaan.</p>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<div class="story reveal">
+  <div class="story-quote">
+    Kami tidak jual tempat tidur. Kami jual kenangan — pagi dengan bunyi ayam, petang tepi kolam batu, dan malam penuh bintang yang anak-anak anda tidak akan lupa seumur hidup.
+  </div>
+  <div class="story-attr">Pengasas Elma Farmstay <span>— Kg Rantau Panjang, Klang</span></div>
+</div>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="reveal">
+    <div class="section-tag">Getting Here</div>
+    <h2>Mudah Dicapai dari<br>Klang Valley</h2>
+  </div>
+  <div class="loc-grid reveal">
+    <div class="loc-info">
+      <p>Terletak di Kg Rantau Panjang, Klang — lokasi strategik yang mudah diakses dari Klang dan Shah Alam. Sesuai untuk short weekend getaway tanpa perlu jauh dari bandar.</p>
+      <div class="loc-details">
+        <div class="loc-item"><div class="loc-item-icon">📍</div><div class="loc-item-text"><h4>Alamat</h4><p>Kg Rantau Panjang, Klang, Selangor</p></div></div>
+        <div class="loc-item"><div class="loc-item-icon">🚗</div><div class="loc-item-text"><h4>Dari Shah Alam / Klang</h4><p>±20 minit perjalanan</p></div></div>
+        <div class="loc-item"><div class="loc-item-icon">🅿️</div><div class="loc-item-text"><h4>Parking</h4><p>Percuma, muat 20 kereta</p></div></div>
+        <div class="loc-item"><div class="loc-item-icon">💬</div><div class="loc-item-text"><h4>Pin Lokasi</h4><p>WhatsApp kami untuk pin Google Maps yang tepat</p></div></div>
+      </div>
+    </div>
+    <a href="https://share.google/AQsN3MPrH152SxTx6" class="map-placeholder" target="_blank" rel="noopener noreferrer">
+      <div class="map-icon">🗺️</div>
+      <div>Elma Farmstay · Kg Rantau Panjang</div>
+      <span>Klik untuk Buka Google Maps →</span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Sedia untuk<br><em style="font-style:italic">Slow Down?</em></h2>
+  <p>Tempahan terbuka sekarang. Hubungi kami melalui WhatsApp untuk semak ketersediaan dan pin lokasi.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20CTA%20Section" class="cta-btn-dark">📱 WhatsApp Kami</a>
+    <a href="https://www.threads.net/@elmafarmstay_klg" class="cta-btn-out" target="_blank" rel="noopener noreferrer">Follow di Threads</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#home" class="footer-logo">
+    <img src="media/logo.png" alt="Elma Farmstay">
+    <span class="footer-logo-text">Elma <em>Farmstay</em></span>
+  </a>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#pool">Natural Pool</a>
+    <a href="#farm">Farm</a>
+    <a href="#packages">Packages</a>
+    <a href="#availability">Availability</a>
+    <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20Footer">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2025 Elma Farmstay · Kg Rantau Panjang, Klang</div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/+601112044594?text=ELMAfarmstay" class="wa-float" aria-label="WhatsApp Elma Farmstay" target="_blank" rel="noopener noreferrer">💬</a>
+
+<script>
+  // Mobile nav
+  function toggleNav() {
+    document.getElementById('hamburger').classList.toggle('active');
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('hamburger').classList.remove('active');
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const revEls = document.querySelectorAll('.reveal');
+  const revObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        setTimeout(() => { e.target.style.willChange = 'auto'; }, 1000);
+        revObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  revEls.forEach(el => revObs.observe(el));
+
+  // Nav shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.07)' : 'none';
+  }, { passive: true });
+
+  // Video toggle
+  function toggleVid(card) {
+    const v = card.querySelector('video');
+    if (!v) return;
+    const btns = card.querySelectorAll('.pool-play-btn, .farmvid-play');
+    if (v.paused) {
+      v.play().catch(() => {});
+      btns.forEach(b => b.textContent = '⏸');
+    } else {
+      v.pause();
+      btns.forEach(b => b.textContent = '▶');
+    }
+  }
+
+  // Auto-play videos in viewport
+  const allVids = document.querySelectorAll('video');
+  const vidObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.play().catch(() => {});
+      } else {
+        e.target.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+  allVids.forEach(v => vidObs.observe(v));
+
+  // Farm video — rotate between two sources
+  const farmVideo = document.getElementById('farmVideo');
+  if (farmVideo) {
+    const farmSources = ['media/IMG_6619.mp4', 'media/IMG_6966.mp4'];
+    let farmIdx = 0;
+    farmVideo.addEventListener('ended', () => {
+      farmIdx = (farmIdx + 1) % farmSources.length;
+      farmVideo.src = farmSources[farmIdx];
+      farmVideo.play().catch(() => {});
+    });
+  }
+
+  // Close mobile nav on outside click
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('navbar');
+    const links = document.getElementById('navLinks');
+    const burger = document.getElementById('hamburger');
+    if (links.classList.contains('open') && !nav.contains(e.target)) {
+      closeNav();
+    }
+  });
+
+  // Close mobile nav on escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
+  });
+</script>
+</body>
+</html>
