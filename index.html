@@ -722,14 +722,22 @@
     </div>
     <div class="calendar-frame">
       <iframe
+        id="elmaCal"
         src="https://calendar.google.com/calendar/embed?src=f0d90ff314be0a24dc7b764654fa4e32bfac5010f90fec8269be8f40e1789bb8%40group.calendar.google.com&ctz=Asia%2FKuala_Lumpur&mode=MONTH&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&bgcolor=%23f5f0e8"
         style="width:100%; height:600px; border:none;"
         frameborder="0" scrolling="no"
-        loading="lazy"
-        sandbox="allow-scripts allow-same-origin allow-popups"
         title="Elma Farmstay Availability Calendar">
         <p>Kalendar tidak dapat dimuatkan. <a href="https://wa.me/+601112044594?text=ELMAfarmstay">WhatsApp kami</a> untuk semak ketersediaan.</p>
       </iframe>
+      <script>
+        (function() {
+          var cal = document.getElementById('elmaCal');
+          if (cal) {
+            var base = cal.src.split('&_cb=')[0];
+            cal.src = base + '&_cb=' + Math.floor(Date.now() / 3600000);
+          }
+        })();
+      </script>
     </div>
   </div>
 </section>
