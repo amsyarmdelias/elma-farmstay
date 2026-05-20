@@ -61,6 +61,7 @@
   .nav-logo img { height:40px; width:auto; object-fit:contain; }
   .nav-logo-text { font-family:'Playfair Display',serif; font-size:1.1rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest); padding-left:0.8rem; margin-left:0.4rem; border-left:1px solid rgba(45,74,40,0.2); }
   .nav-logo-text em { font-style:italic; color:var(--gold); letter-spacing:0.1em; text-transform:none; margin-left:0.4rem; }
+  .nav-muslim-badge { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--forest); color:var(--cream); padding:0.28rem 0.7rem; margin-left:0.9rem; display:flex; align-items:center; gap:0.35rem; white-space:nowrap; border:1px solid rgba(201,168,76,0.35); }
   .nav-links { display:flex; gap:2.5rem; list-style:none; }
   .nav-links a { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); text-decoration:none; transition:color 0.3s; }
   .nav-links a:hover { color:var(--forest); }
@@ -263,6 +264,14 @@
   .pkg-note-title { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); }
   .pkg-note p { margin-top:0.4rem; font-size:0.89rem; color:#4a4035; line-height:1.6; }
 
+  /* MUSLIM ONLY */
+  .muslim-banner { margin-top:2.5rem; background:var(--forest); border-left:4px solid var(--gold); padding:2rem 2.5rem; display:flex; align-items:flex-start; gap:1.5rem; }
+  .muslim-icon { font-size:2rem; flex-shrink:0; line-height:1; }
+  .muslim-content h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold); margin-bottom:0.5rem; }
+  .muslim-content p { font-size:0.9rem; color:rgba(245,240,232,0.72); line-height:1.7; margin-bottom:1rem; }
+  .muslim-tags { display:flex; gap:0.5rem; flex-wrap:wrap; }
+  .mtag { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(201,168,76,0.3); color:var(--gold); padding:0.28rem 0.65rem; }
+
   /* AVAILABILITY */
   .availability { background:#f0ece2; }
   .avail-intro { font-size:1rem; line-height:1.8; color:#4a4035; margin-top:0.8rem; max-width:560px; }
@@ -403,6 +412,7 @@
   <a href="#home" class="nav-logo">
     <img src="media/logo.png" alt="Elma Farmstay">
     <span class="nav-logo-text">Elma <em>Farmstay</em></span>
+    <span class="nav-muslim-badge">+ Muslim Only</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" onclick="closeNav()">About</a></li>
@@ -436,6 +446,7 @@
     </div>
   </div>
   <div class="hero-badges">
+    <div class="badge">+ Muslim Only</div>
     <div class="badge">✦ Natural Pool – No Chlorine</div>
     <div class="badge">✦ Working Farm</div>
     <div class="badge">✦ Family Exclusive</div>
@@ -444,6 +455,7 @@
 
 <!-- STRIP -->
 <div class="intro-strip">
+  <div class="strip-item"><span class="dot"></span>+ Muslim Only</div>
   <div class="strip-item"><span class="dot"></span>1/3 Ekar Tanah</div>
   <div class="strip-item"><span class="dot"></span>Natural Pool + Stream + Waterfall</div>
   <div class="strip-item"><span class="dot"></span>3 Bilik Tidur / Unit</div>
@@ -694,6 +706,21 @@
     <div class="pkg-note-title">Nota Penting</div>
     <p>Harga weekday & weekend adalah sama. Peak season semasa cuti sekolah — tempahan awal sangat digalakkan. Setiap unit max 9 pax.</p>
   </div>
+
+  <div class="muslim-banner reveal">
+    <div class="muslim-icon">+</div>
+    <div class="muslim-content">
+      <h3>Muslim Only — Persekitaran Mesra Islam</h3>
+      <p>Elma Farmstay adalah eksklusif untuk tetamu Muslim sahaja. Semua aktiviti, persekitaran, dan kemudahan direka untuk memastikan keselesaan keluarga Muslim sepenuhnya.</p>
+      <div class="muslim-tags">
+        <span class="mtag">Tiada Alkohol</span>
+        <span class="mtag">Halal BBQ</span>
+        <span class="mtag">Tetamu Muslim Sahaja</span>
+        <span class="mtag">Persekitaran Selamat & Selesa</span>
+        <span class="mtag">Aurat Dijaga</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- AVAILABILITY -->
@@ -781,6 +808,7 @@
   <div class="cta-btns">
     <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20CTA%20Section" class="cta-btn-dark">📱 WhatsApp Kami</a>
     <a href="https://www.threads.net/@elmafarmstay_klg" class="cta-btn-out" target="_blank" rel="noopener noreferrer">Follow di Threads</a>
+    <a href="https://www.tiktok.com/@elmafarmstay" class="cta-btn-out" target="_blank" rel="noopener noreferrer">TikTok @elmafarmstay</a>
   </div>
 </div>
 
@@ -797,6 +825,7 @@
     <a href="#packages">Packages</a>
     <a href="#availability">Availability</a>
     <a href="https://wa.me/+601112044594?text=ELMAfarmstay%20-%20Footer">WhatsApp</a>
+    <a href="https://www.tiktok.com/@elmafarmstay" target="_blank" rel="noopener noreferrer">TikTok</a>
   </div>
   <div class="footer-copy">© 2025 Elma Farmstay · Kg Rantau Panjang, Klang</div>
 </footer>
