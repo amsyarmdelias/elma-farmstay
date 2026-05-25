@@ -280,8 +280,38 @@
   .avail-note { background:var(--forest); color:var(--cream); padding:1.5rem 2rem; }
   .avail-note h4 { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem; }
   .avail-note p { font-size:0.88rem; line-height:1.6; color:rgba(245,240,232,0.7); }
-  .calendar-frame { background:#fff; border:1px solid rgba(45,74,40,0.12); overflow:hidden; }
-  .calendar-frame iframe { display:block; width:100%; border:none; }
+  /* CUSTOM CALENDAR */
+  .elma-cal { background:var(--cream); border:1px solid rgba(45,74,40,0.12); }
+  .elma-cal-nav { display:flex; align-items:center; justify-content:space-between; padding:1.4rem 1.8rem 1rem; border-bottom:1px solid rgba(45,74,40,0.1); }
+  .elma-cal-nav button { background:none; border:1px solid rgba(45,74,40,0.2); color:var(--forest); width:34px; height:34px; cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all .2s; }
+  .elma-cal-nav button:hover { background:var(--forest); color:var(--cream); }
+  .elma-cal-month { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--forest); letter-spacing:0.02em; }
+  .elma-cal-year { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.15em; color:var(--stone); text-transform:uppercase; margin-top:2px; }
+  .elma-cal-grid { padding:1rem 1.2rem 1.4rem; }
+  .elma-cal-heads { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:6px; }
+  .elma-cal-heads span { text-align:center; font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); padding:4px 0; }
+  .elma-cal-days { display:grid; grid-template-columns:repeat(7,1fr); gap:3px; }
+  .elma-cal-cell { aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:0.78rem; position:relative; border:1.5px solid transparent; transition:all .15s; }
+  .elma-cal-cell.empty { background:transparent; }
+  .elma-cal-cell.past { color:#ccc; background:#f7f5f0; }
+  .elma-cal-cell.avail { background:#eaf2e8; color:var(--moss); }
+  .elma-cal-cell.partial { background:#fdf3d8; color:#7a5c10; cursor:pointer; border-color:rgba(201,168,76,0.4); }
+  .elma-cal-cell.full { background:var(--forest); color:var(--cream); }
+  .elma-cal-cell.today { outline:2px solid var(--gold); outline-offset:-2px; }
+  .elma-cal-cell.partial:hover,.elma-cal-cell.full:hover { transform:scale(1.08); z-index:3; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+  .elma-cal-pip { width:4px; height:4px; border-radius:50%; margin-top:3px; }
+  .elma-cal-cell.partial .elma-cal-pip { background:var(--gold); }
+  .elma-cal-cell.full .elma-cal-pip { background:rgba(245,240,232,0.5); }
+  .elma-cal-legend { display:flex; gap:1.2rem; padding:0.8rem 1.8rem 1.2rem; border-top:1px solid rgba(45,74,40,0.08); flex-wrap:wrap; }
+  .elma-leg { display:flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--stone); }
+  .elma-leg-sq { width:12px; height:12px; }
+  .elma-leg-sq.avail { background:#eaf2e8; border:1px solid var(--moss); }
+  .elma-leg-sq.partial { background:#fdf3d8; border:1px solid var(--gold); }
+  .elma-leg-sq.full { background:var(--forest); }
+  .elma-cal-loading { text-align:center; padding:3rem; font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--stone); letter-spacing:0.1em; }
+  .elma-cal-tooltip { position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:var(--dark); color:var(--cream); font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.06em; padding:5px 10px; white-space:nowrap; pointer-events:none; opacity:0; transition:opacity .15s; z-index:10; }
+  .elma-cal-cell:hover .elma-cal-tooltip { opacity:1; }
+  @media(max-width:900px){ .avail-grid{grid-template-columns:1fr;gap:2rem;} }
 
   /* STORY */
   .story { background:var(--dark); padding:6rem 4rem; text-align:center; }
@@ -747,24 +777,30 @@
         <p style="font-size:0.9rem; color:#4a4035; line-height:1.6;">Cuti sekolah & cuti umum — tempahan awal sangat digalakkan. Weekday & weekend sama harga.</p>
       </div>
     </div>
-    <div class="calendar-frame">
-      <iframe
-        id="elmaCal"
-        src="https://calendar.google.com/calendar/embed?src=f0d90ff314be0a24dc7b764654fa4e32bfac5010f90fec8269be8f40e1789bb8%40group.calendar.google.com&ctz=Asia%2FKuala_Lumpur&mode=MONTH&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&bgcolor=%23f5f0e8"
-        style="width:100%; height:600px; border:none;"
-        frameborder="0" scrolling="no"
-        title="Elma Farmstay Availability Calendar">
-        <p>Kalendar tidak dapat dimuatkan. <a href="https://wa.me/+601112044594?text=ELMAfarmstay">WhatsApp kami</a> untuk semak ketersediaan.</p>
-      </iframe>
-      <script>
-        (function() {
-          var cal = document.getElementById('elmaCal');
-          if (cal) {
-            var base = cal.src.split('&_cb=')[0];
-            cal.src = base + '&_cb=' + Math.floor(Date.now() / 3600000);
-          }
-        })();
-      </script>
+    <div class="elma-cal" id="elmaCal">
+      <div class="elma-cal-nav">
+        <div>
+          <div class="elma-cal-month" id="calMonth">—</div>
+          <div class="elma-cal-year" id="calYear">—</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button onclick="calGo(-1)" aria-label="Bulan lalu">‹</button>
+          <button onclick="calGo(1)" aria-label="Bulan depan">›</button>
+        </div>
+      </div>
+      <div class="elma-cal-grid">
+        <div class="elma-cal-heads">
+          <span>Ahd</span><span>Isn</span><span>Sel</span><span>Rab</span><span>Kha</span><span>Jum</span><span>Sab</span>
+        </div>
+        <div class="elma-cal-days" id="calDays">
+          <div class="elma-cal-loading">Memuatkan kalendar…</div>
+        </div>
+      </div>
+      <div class="elma-cal-legend">
+        <div class="elma-leg"><div class="elma-leg-sq avail"></div> Available</div>
+        <div class="elma-leg"><div class="elma-leg-sq partial"></div> 1 Unit Booked</div>
+        <div class="elma-leg"><div class="elma-leg-sq full"></div> Full Booked</div>
+      </div>
     </div>
   </div>
 </section>
@@ -916,6 +952,120 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeNav();
   });
+</script>
+<!-- ELMA CALENDAR -->
+<script>
+(function(){
+  // ── CONFIG ─────────────────────────────────────────────────────
+  // Paste your Google Calendar API key below.
+  // Get one free at: console.cloud.google.com → elma-bot project →
+  // APIs & Services → Credentials → Create API Key (restrict to Calendar API)
+  var API_KEY   = 'AIzaSyAbsDamLCY3Q4XwWpy3uiS2lnxHMjG4aDA';
+  var CAL_ID    = 'f0d90ff314be0a24dc7b764654fa4e32bfac5010f90fec8269be8f40e1789bb8@group.calendar.google.com';
+  // ───────────────────────────────────────────────────────────────
+
+  var MONTHS = ['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'];
+  var yr, mo, events = [];
+
+  function init(){ var n=new Date(); yr=n.getFullYear(); mo=n.getMonth(); load(); }
+
+  function load(){
+    document.getElementById('calMonth').textContent = MONTHS[mo];
+    document.getElementById('calYear').textContent  = yr;
+    document.getElementById('calDays').innerHTML    = '<div class="elma-cal-loading">Memuatkan…</div>';
+
+    if(API_KEY === 'YOUR_GOOGLE_API_KEY'){
+      // Fallback: use Google Calendar embed if API key not yet set
+      var wrap = document.getElementById('elmaCal');
+      wrap.innerHTML = '<iframe src="https://calendar.google.com/calendar/embed?src='
+        + encodeURIComponent(CAL_ID)
+        + '&ctz=Asia%2FKuala_Lumpur&mode=MONTH&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&bgcolor=%23f5f0e8'
+        + '" style="width:100%;height:580px;border:none;" frameborder="0"></iframe>';
+      return;
+    }
+
+    var tMin = new Date(yr, mo, 1).toISOString();
+    var tMax = new Date(yr, mo+1, 1).toISOString();
+    var url  = 'https://www.googleapis.com/calendar/v3/calendars/'
+      + encodeURIComponent(CAL_ID)
+      + '/events?key=' + API_KEY
+      + '&timeMin=' + encodeURIComponent(tMin)
+      + '&timeMax=' + encodeURIComponent(tMax)
+      + '&singleEvents=true&orderBy=startTime&maxResults=100';
+
+    fetch(url)
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d.error){
+          document.getElementById('calDays').innerHTML =
+            '<div class="elma-cal-loading" style="color:#c0392b">API Error '+d.error.code+': '+d.error.message+'</div>';
+          return;
+        }
+        events = d.items || []; build();
+      })
+      .catch(function(err){
+        document.getElementById('calDays').innerHTML =
+          '<div class="elma-cal-loading" style="color:#c0392b">Tidak dapat memuatkan kalendar.</div>';
+      });
+  }
+
+  function getStatus(ds){
+    for(var i=0;i<events.length;i++){
+      var ev = events[i];
+      var s  = ev.start && ev.start.date;
+      var e  = ev.end   && ev.end.date;
+      if(!s||!e) continue;
+      if(ds >= s && ds < e){
+        var sum = (ev.summary||'').toUpperCase();
+        if(sum.indexOf('FULL')>-1) return 'full';
+        if(sum.indexOf('1 UNIT')>-1) return 'partial';
+      }
+    }
+    return 'avail';
+  }
+
+  function build(){
+    var today    = new Date().toISOString().split('T')[0];
+    var firstDow = new Date(yr, mo, 1).getDay();
+    var daysInMo = new Date(yr, mo+1, 0).getDate();
+    var html     = '';
+
+    for(var i=0;i<firstDow;i++) html += '<div class="elma-cal-cell empty"></div>';
+
+    for(var d=1;d<=daysInMo;d++){
+      var ds   = yr+'-'+pad(mo+1)+'-'+pad(d);
+      var past = ds < today;
+      var cls, tip='', pip='';
+
+      if(past){
+        cls='past';
+      } else {
+        var st = getStatus(ds);
+        cls = st;
+        if(st==='partial'){ tip='<div class="elma-cal-tooltip">1 Unit Booked</div>'; pip='<div class="elma-cal-pip"></div>'; }
+        if(st==='full')   { tip='<div class="elma-cal-tooltip">Full Booked</div>';   pip='<div class="elma-cal-pip"></div>'; }
+      }
+
+      if(ds===today) cls+=' today';
+      html += '<div class="elma-cal-cell '+cls+'">'+tip+'<span>'+d+'</span>'+pip+'</div>';
+    }
+
+    document.getElementById('calDays').innerHTML = html;
+  }
+
+  function pad(n){ return n<10?'0'+n:n; }
+
+  window.calGo = function(dir){
+    mo += dir;
+    if(mo>11){ mo=0; yr++; }
+    if(mo< 0){ mo=11; yr--; }
+    load();
+  };
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
 </script>
 </body>
 </html>
