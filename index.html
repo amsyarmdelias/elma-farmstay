@@ -282,37 +282,42 @@
   .avail-note p { font-size:0.88rem; line-height:1.6; color:rgba(245,240,232,0.7); }
   /* CUSTOM CALENDAR — AMAN RESORT STYLE */
   .elma-cal { background:#fff; border:none; box-shadow:0 2px 40px rgba(30,30,27,0.07); }
-  .elma-cal-nav { display:flex; align-items:center; justify-content:space-between; padding:2rem 2.4rem 1.4rem; border-bottom:1px solid rgba(30,30,27,0.07); }
-  .elma-cal-nav button { background:none; border:none; color:var(--dark); width:36px; height:36px; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; transition:opacity .2s; opacity:0.45; }
+  .elma-cal-nav { display:flex; align-items:center; justify-content:space-between; padding:2rem 2.4rem 1.6rem; border-bottom:1px solid rgba(30,30,27,0.06); }
+  .elma-cal-nav button { background:none; border:none; color:var(--dark); width:36px; height:36px; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; transition:opacity .2s; opacity:0.35; }
   .elma-cal-nav button:hover { opacity:1; }
-  .elma-cal-month { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:400; color:var(--dark); letter-spacing:0.01em; font-style:italic; }
-  .elma-cal-year { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.22em; color:#aaa; text-transform:uppercase; margin-top:4px; }
-  .elma-cal-grid { padding:1.2rem 1.8rem 1.8rem; }
-  .elma-cal-heads { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:10px; }
-  .elma-cal-heads span { text-align:center; font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:#bbb; padding:6px 0; }
-  .elma-cal-days { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
-  .elma-cal-cell { aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:0.85rem; font-weight:400; position:relative; transition:all .15s; letter-spacing:0.02em; }
+  .elma-cal-month { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:400; color:var(--dark); letter-spacing:0.01em; font-style:italic; }
+  .elma-cal-year { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.24em; color:#bbb; text-transform:uppercase; margin-top:5px; }
+  .elma-cal-grid { padding:1.4rem 1.8rem 2rem; }
+  .elma-cal-heads { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:8px; }
+  .elma-cal-heads span { text-align:center; font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:#c0bbb4; padding:6px 0; }
+  .elma-cal-days { display:grid; grid-template-columns:repeat(7,1fr); gap:5px; }
+  .elma-cal-cell { aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'DM Mono',monospace; position:relative; transition:all .15s; border-radius:4px; gap:3px; }
+  .elma-cal-num { font-size:1.05rem; font-weight:400; line-height:1; color:inherit; }
+  .elma-cal-label { font-size:0.5rem; letter-spacing:0.14em; text-transform:uppercase; line-height:1; opacity:0.85; }
   .elma-cal-cell.empty { background:transparent; }
-  .elma-cal-cell.past { color:#d8d4cc; background:transparent; }
-  .elma-cal-cell.avail { background:#f4f8f3; color:#3a5c36; }
-  .elma-cal-cell.partial { background:#fef9ee; color:#8a6510; cursor:pointer; box-shadow:inset 0 0 0 1.5px rgba(201,168,76,0.55); }
-  .elma-cal-cell.full { background:var(--forest); color:#fff; }
+  .elma-cal-cell.past .elma-cal-num { color:#d8d4cc; }
+  .elma-cal-cell.past .elma-cal-label { display:none; }
+  .elma-cal-cell.past { background:#fafaf8; border-radius:4px; }
+  .elma-cal-cell.avail { background:#f2f7f1; }
+  .elma-cal-cell.avail .elma-cal-num { color:#2d4a28; }
+  .elma-cal-cell.avail .elma-cal-label { color:#5a8055; }
+  .elma-cal-cell.partial { background:#fef8e8; box-shadow:inset 0 0 0 1.5px rgba(201,168,76,0.6); }
+  .elma-cal-cell.partial .elma-cal-num { color:#7a5500; }
+  .elma-cal-cell.partial .elma-cal-label { color:#a07010; }
+  .elma-cal-cell.full { background:#2d4a28; }
+  .elma-cal-cell.full .elma-cal-num { color:#fff; }
+  .elma-cal-cell.full .elma-cal-label { color:rgba(255,255,255,0.65); }
   .elma-cal-cell.today { box-shadow:inset 0 0 0 2px var(--gold); }
-  .elma-cal-cell.avail:hover { background:#e6f0e5; }
-  .elma-cal-cell.partial:hover { background:#fdf2d6; }
+  .elma-cal-cell.avail:hover { background:#e4f0e2; }
+  .elma-cal-cell.partial:hover { background:#fdf1d0; }
   .elma-cal-cell.full:hover { background:#233d1e; }
-  .elma-cal-pip { width:3px; height:3px; border-radius:50%; margin-top:4px; }
-  .elma-cal-cell.partial .elma-cal-pip { background:var(--gold); }
-  .elma-cal-cell.full .elma-cal-pip { background:rgba(255,255,255,0.4); }
-  .elma-cal-legend { display:flex; gap:1.6rem; padding:1rem 2.4rem 1.6rem; border-top:1px solid rgba(30,30,27,0.06); flex-wrap:wrap; }
-  .elma-leg { display:flex; align-items:center; gap:8px; font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#999; }
-  .elma-leg-sq { width:13px; height:13px; }
-  .elma-leg-sq.avail { background:#f4f8f3; border:1.5px solid #3a5c36; }
-  .elma-leg-sq.partial { background:#fef9ee; border:1.5px solid var(--gold); }
-  .elma-leg-sq.full { background:var(--forest); }
-  .elma-cal-loading { text-align:center; padding:4rem; font-family:'DM Mono',monospace; font-size:0.68rem; color:#bbb; letter-spacing:0.16em; text-transform:uppercase; }
-  .elma-cal-tooltip { position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%); background:var(--dark); color:#fff; font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; padding:6px 12px; white-space:nowrap; pointer-events:none; opacity:0; transition:opacity .2s; z-index:10; }
-  .elma-cal-cell:hover .elma-cal-tooltip { opacity:1; }
+  .elma-cal-legend { display:flex; gap:1.6rem; padding:1.2rem 2.4rem 1.8rem; border-top:1px solid rgba(30,30,27,0.06); flex-wrap:wrap; }
+  .elma-leg { display:flex; align-items:center; gap:8px; font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#aaa; }
+  .elma-leg-sq { width:13px; height:13px; border-radius:3px; }
+  .elma-leg-sq.avail { background:#f2f7f1; border:1.5px solid #5a8055; }
+  .elma-leg-sq.partial { background:#fef8e8; border:1.5px solid var(--gold); }
+  .elma-leg-sq.full { background:#2d4a28; }
+  .elma-cal-loading { text-align:center; padding:4rem; font-family:'DM Mono',monospace; font-size:0.68rem; color:#ccc; letter-spacing:0.18em; text-transform:uppercase; }
   @media(max-width:900px){ .avail-grid{grid-template-columns:1fr;gap:2rem;} }
 
   /* STORY */
@@ -1044,12 +1049,13 @@
       } else {
         var st = getStatus(ds);
         cls = st;
-        if(st==='partial'){ tip='<div class="elma-cal-tooltip">1 Unit Booked</div>'; pip='<div class="elma-cal-pip"></div>'; }
-        if(st==='full')   { tip='<div class="elma-cal-tooltip">Full Booked</div>';   pip='<div class="elma-cal-pip"></div>'; }
       }
 
       if(ds===today) cls+=' today';
-      html += '<div class="elma-cal-cell '+cls+'">'+tip+'<span>'+d+'</span>'+pip+'</div>';
+      var label = '';
+      if(cls.indexOf('partial')>-1) label = '<div class="elma-cal-label">1 Unit</div>';
+      if(cls.indexOf('full')>-1)    label = '<div class="elma-cal-label">Booked</div>';
+      html += '<div class="elma-cal-cell '+cls+'"><div class="elma-cal-num">'+d+'</div>'+label+'</div>';
     }
 
     document.getElementById('calDays').innerHTML = html;
