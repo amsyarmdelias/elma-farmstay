@@ -1,0 +1,14 @@
+# Internal Cowork files — never push to GitHub
+00_Resources/
+Alex Hormozi Advisor/
+Finance/
+Marketing/
+Operations/
+CLAUDE.md
+MEMORY.md
+MEMORY.md.docx
+_DELETE_CANDIDATES.md
+*.docx
+push_elma.html
+push_elma.bat
+setup_git.bat
