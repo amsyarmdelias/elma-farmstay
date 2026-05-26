@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Tips & Cerita Farmstay | ELMA Farmstay Klang</title>
+<meta name="description" content="Artikel dan panduan tentang farmstay Muslim friendly, natural pool tanpa klorin, aktiviti keluarga, dan slow living di ELMA Farmstay Klang, Selangor.">
+<link rel="canonical" href="https://www.elmafarmstay.casa/blog">
+<link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:#f5f0e8; --earth:#8b6f47; --moss:#4a6741; --forest:#2d4a28;
+    --water:#6b9aaa; --water-light:#a8c8d4; --stone:#9e9180;
+    --dark:#1e1e1b; --gold:#c9a84c; --nav-height:65px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:var(--nav-height); }
+  body { background:var(--cream); color:var(--dark); font-family:'Lora',serif; overflow-x:hidden; }
+  a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:1.1rem 4rem; background:rgba(245,240,232,0.95); backdrop-filter:blur(14px); border-bottom:1px solid rgba(139,111,71,0.12); height:var(--nav-height); }
+  .nav-logo { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--forest); display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+  .nav-logo img { height:40px; width:auto; object-fit:contain; }
+  .nav-logo-text { font-family:'Playfair Display',serif; font-size:1.1rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest); padding-left:0.8rem; margin-left:0.4rem; border-left:1px solid rgba(45,74,40,0.2); }
+  .nav-logo-text em { font-style:italic; color:var(--gold); letter-spacing:0.1em; text-transform:none; margin-left:0.4rem; }
+  .nav-muslim-badge { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--forest); color:var(--cream); padding:0.28rem 0.7rem; margin-left:0.9rem; display:flex; align-items:center; gap:0.35rem; white-space:nowrap; border:1px solid rgba(201,168,76,0.35); }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth); text-decoration:none; transition:color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--forest); }
+  .nav-cta { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--forest); color:var(--cream); padding:0.6rem 1.4rem; text-decoration:none; transition:background 0.3s; }
+  .nav-cta:hover { background:var(--moss); }
+
+  /* PAGE HEADER */
+  .page-header { padding:10rem 4rem 5rem; background:var(--forest); }
+  .page-header .section-tag { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(245,240,232,0.42); margin-bottom:0.85rem; display:flex; align-items:center; gap:0.8rem; }
+  .page-header .section-tag::before { content:''; display:inline-block; width:26px; height:1px; background:rgba(245,240,232,0.42); }
+  .page-header h1 { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.8rem); color:var(--cream); line-height:1.15; }
+  .page-header p { color:rgba(245,240,232,0.6); font-size:1rem; line-height:1.8; max-width:520px; margin-top:1rem; }
+
+  /* BLOG GRID */
+  .blog-section { padding:6rem 4rem; }
+  .blog-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:2.5rem; margin-top:3rem; }
+  .blog-card { border:2px solid rgba(45,74,40,0.12); background:#fff; text-decoration:none; display:flex; flex-direction:column; transition:border-color 0.3s, transform 0.3s; }
+  .blog-card:hover { border-color:var(--moss); transform:translateY(-4px); }
+  .blog-card-body { padding:2rem; display:flex; flex-direction:column; flex:1; }
+  .blog-cluster { font-family:'DM!Mono',monospace; font-size:0.58rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--moss); margin-bottom:0.75rem; }
+  .blog-title { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--forest); line-height:1.35; margin-bottom:0.75rem; }
+  .blog-excerpt { font-size:0.87rem; line-height:1.7; color:#5a5040; flex:1; }
+  .blog-meta { margin-top:1.5rem; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(45,74,40,0.08); padding-top:1rem; }
+  .blog-date { font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); }
+  .blog-read { font-family:'DM!Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--moss); }
+
+  /* FOOTER */
+  footer { background:var(--dark); padding:4rem; text-align:center; }
+  .footer-logo { display:inline-flex; align-items:center; gap:0.8rem; text-decoration:none; margin-bottom:2rem; }
+  .footer-logo img { height:36px; width:auto; }
+  .footer-logo-text { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--cream); letter-spacing:0.15em; text-transform:uppercase; }
+  .footer-logo-text em { font-style:italic; color:var(--gold); }
+  .footer-links { display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
+  .footer-links a { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.42); text-decoration:none; transition:color 0.3s; }
+  .footer-links a:hover { color:var(--cream); }
+  .footer-copy { font-family:'DM!Mono',monospace; font-size:0.6rem; letter-spacing:0.08em; color:rgba(245,240,232,0.2); }
+
+  /* WA FLOAT */
+  .wa-float { position:fixed; bottom:2rem; right:2rem; width:54px; height:54px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; text-decoration:none; box-shadow:0 4px 20px rgba(0,0,0,0.18); z-index:200; transition:transform 0.3s; }
+  .wa-float:hover { transform:scale(1.08); }
+
+  @media(max-width:768px) {
+    nav { padding:1rem 1.5rem; }
+    .nav-links { display:none; }
+    .page-header, .blog-section { padding-left:1.5rem; padding-right:1.5rem; }
+    footer { padding:3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="https://www.elmafarmstay.casa" class="nav-logo">
+    <img src="../media/logo.png" alt="Elma Farmstay">
+    <span class="nav-logo-text">Elma <em>Farmstay</em></span>
+    <span class="nav-muslim-badge">+ Muslim Only</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://www.elmafarmstay.casa#about">About</a></li>
+    <li><a href="https://www.elmafarmstay.casa#pool">Natural Pool</a></li>
+    <li><a href="https://www.elmafarmstay.casa#packages">Packages</a></li>
+    <li><a href="/blog" class="active">Blog</a></li>
+  </ul>
+  <a href="https://wa.me/601112044594?text=Hi%20ELMA%20Farmstay" class="nav-cta">Book Now</a>
+</nav>
+
+<div class="page-header">
+  <div class="section-tag">Cerita & Panduan</div>
+  <h1>Blog ELMA Farmstay</h1>
+  <p>Tentang farmstay Muslim, natural pool, pengalaman farm, dan slow living untuk keluarga di Selangor.</p>
+</div>
+
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <a class="blog-card" href="/blog/farmstay-muslim-friendly-selangor/">
+      <div class="blog-card-body">
+        <div class="blog-cluster">Muslim Friendly</div>
+        <h2 class="blog-title">Farmstay Muslim Friendly Selangor — Kenapa ELMA Farmstay Lain dari Yang Lain</h2>
+        <p class="blog-excerpt">ELMA hanya terima tetamu Muslim. Pinggan, cawan, peralatan dapur — hanya pernah digunakan oleh tetamu Muslim. Ini bukan sekadar label.</p>
+        <div class="blog-meta">
+          <span class="blog-date">26 Mei 2026</span>
+          <span class="blog-read">Baca →</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="blog-card" href="/blog/kolam-semula-jadi-tanpa-klorin/">
+      <div class="blog-card-body">
+        <div class="blog-cluster">Natural Pool</div>
+        <h2 class="blog-title">Kolam Semula Jadi Tanpa Klorin: Apa Itu Bog Filter dan Kenapa Ia Selamat untuk Anak</h2>
+        <p class="blog-excerpt">Kolam ELMA guna sistem bog filter — tiada klorin, tiada kimia. Air ditapis secara semula jadi. Selamat untuk anak sensitif dan kulit eczema.</p>
+        <div class="blog-meta">
+          <span class="blog-date">26 Mei 2026</span>
+          <span class="blog-read">Baca →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.elmafarmstay.casa" class="footer-logo">
+    <img src="../media/logo.png" alt="Elma Farmstay">
+    <span class="footer-logo-text">Elma <em>Farmstay</em></span>
+  </a>
+  <div class="footer-links">
+    <a href="https://www.elmafarmstay.casa#about">About</a>
+    <a href="https://www.elmafarmstay.casa#pool">Natural Pool</a>
+    <a href="https://www.elmafarmstay.casa#packages">Packages</a>
+    <a href="/blog">Blog</a>
+    <a href="https://wa.me/601112044594" target="_blank">WhatsApp</a>
+    <a href="https://www.tiktok.com/@elmafarmstay" target="_blank">TikTok</a>
+  </div>
+  <div class="footer-copy">© 2026 Elma Farmstay · Kg Rantau Panjang, Klang</div>
+</footer>
+
+<a href="https://wa.me/601112044594?text=Hi%20ELMA%20Farmstay" class="wa-float" aria-label="WhatsApp ELMA Farmstay" target="_blank">💬</a>
+
+</body>
+</html>
