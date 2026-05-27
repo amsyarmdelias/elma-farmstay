@@ -13,7 +13,8 @@
 <link rel="icon" href="../../media/favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=optional"></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,7 +35,7 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; scroll-padding-top:var(--nav-height); }
-  body { background:var(--cream); color:var(--dark); font-family:'Lora',serif; overflow-x:hidden; }
+  body { background:var(--cream); color:var(--dark); font-family:'Lora',Georgia,'Times New Roman',serif; overflow-x:hidden; }
 
   nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:1.1rem 4rem; background:rgba(245,240,232,0.95); backdrop-filter:blur(14px); border-bottom:1px solid rgba(139,111,71,0.12); height:var(--nav-height); }
   .nav-logo { font-family:'Playfair Display',serif; color:var(--forest); display:flex; align-items:center; gap:0.6rem; text-decoration:none; }

@@ -58,7 +58,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="media/pool_new2.jpg" as="image" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=optional"></noscript>
 
 <style>
   :root {
@@ -77,7 +78,7 @@
   img { image-rendering:-webkit-optimize-contrast; image-rendering:crisp-edges; -webkit-backface-visibility:hidden; backface-visibility:hidden; transform:translateZ(0); }
   video { -webkit-backface-visibility:hidden; backface-visibility:hidden; transform:translateZ(0); }
   html { scroll-behavior:smooth; scroll-padding-top:var(--nav-height); }
-  body { background:var(--cream); color:var(--dark); font-family:'Lora',serif; overflow-x:hidden; }
+  body { background:var(--cream); color:var(--dark); font-family:'Lora',Georgia,'Times New Roman',serif; overflow-x:hidden; }
 
   /* FOCUS */
   a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
@@ -1098,25 +1099,4 @@
       var label = '';
       if(cls.indexOf('partial')>-1) label = '<div class="elma-cal-label">1 Unit Avail</div>';
       if(cls.indexOf('full')>-1)    label = '<div class="elma-cal-label">Booked</div>';
-      html += '<div class="elma-cal-cell '+cls+'"><div class="elma-cal-num">'+d+'</div>'+label+'</div>';
-    }
-
-    document.getElementById('calDays').innerHTML = html;
-  }
-
-  function pad(n){ return n<10?'0'+n:n; }
-
-  window.calGo = function(dir){
-    mo += dir;
-    if(mo>11){ mo=0; yr++; }
-    if(mo< 0){ mo=11; yr--; }
-    load();
-  };
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else { init(); }
-})();
-</script>
-</body>
-</html>
+      html += '<div class="elma-cal-cell '+cls+'"><div class="elma-cal-num">'+d+'</div>'+la
