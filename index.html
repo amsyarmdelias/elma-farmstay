@@ -1099,4 +1099,25 @@
       var label = '';
       if(cls.indexOf('partial')>-1) label = '<div class="elma-cal-label">1 Unit Avail</div>';
       if(cls.indexOf('full')>-1)    label = '<div class="elma-cal-label">Booked</div>';
-      html += '<div class="elma-cal-cell '+cls+'"><div class="elma-cal-num">'+d+'</div>'+la
+      html += '<div class="elma-cal-cell '+cls+'"><div class="elma-cal-num">'+d+'</div>'+label+'</div>';
+    }
+
+    document.getElementById('calDays').innerHTML = html;
+  }
+
+  function pad(n){ return n<10?'0'+n:n; }
+
+  window.calGo = function(dir){
+    mo += dir;
+    if(mo>11){ mo=0; yr++; }
+    if(mo< 0){ mo=11; yr--; }
+    load();
+  };
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+</script>
+</body>
+</html>
