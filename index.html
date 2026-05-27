@@ -58,8 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="media/pool_new2.jpg" as="image" fetchpriority="high">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap">
 
 <style>
   :root {
@@ -449,6 +448,8 @@
     section, .pool-section, .farm, .activities, .story, .location, .cta-section { padding:4rem 1.5rem; }
     .hero-content { padding:0 1.5rem 4rem; }
     .hero-badges { right:1.5rem; bottom:1.5rem; }
+    .hero-video-wrap video { display:none; }
+    .hero-video-wrap { background-image:url('media/pool_new2.jpg'); background-size:cover; background-position:center; }
     .about-grid, .pool-grid, .pkg-grid, .loc-grid, .farm-layout, .avail-grid { grid-template-columns:1fr; gap:2.5rem; }
     .gallery-strip { height:auto; grid-template-columns:1fr; }
     .g-full img { aspect-ratio:16/9; height:auto; }
@@ -1101,4 +1102,19 @@
     document.getElementById('calDays').innerHTML = html;
   }
 
-  function pad(n){ return n<10?'0'+n
+  function pad(n){ return n<10?'0'+n:n; }
+
+  window.calGo = function(dir){
+    mo += dir;
+    if(mo>11){ mo=0; yr++; }
+    if(mo< 0){ mo=11; yr--; }
+    load();
+  };
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+</script>
+</body>
+</html>
