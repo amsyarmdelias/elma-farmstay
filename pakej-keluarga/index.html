@@ -143,6 +143,16 @@
     .inc-grid, .use-grid { grid-template-columns:1fr 1fr; }
     footer { padding:3rem 1.5rem; }
   }
+
+  /* RELATED ARTICLES */
+  .related-section { padding:5rem 4rem; background:var(--cream); }
+  .related-section .section-inner { max-width:900px; margin:0 auto; }
+  .related-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; margin-top:2rem; }
+  .related-card { border:1px solid rgba(139,111,71,0.15); padding:1.4rem 1.6rem; text-decoration:none; display:block; transition:border-color 0.3s,background 0.3s; }
+  .related-card:hover { border-color:var(--gold); background:rgba(201,168,76,0.04); }
+  .related-card-label { font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem; }
+  .related-card-title { font-family:'Lora',serif; font-size:0.88rem; line-height:1.6; color:var(--forest); }
+  @media(max-width:768px) { .related-section { padding:3rem 1.5rem; } }
 </style>
 </head>
 <body>
@@ -314,6 +324,29 @@
         <p>Reset dari routine. Satu malam cukup untuk rasa beza yang korang dah lama perlukan.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- RELATED ARTICLES -->
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag">Baca Juga</div>
+    <h2 class="section-title">Artikel Berkaitan</h2>
+  <div class="related-grid">
+    <a href="/blog/tempah-farmstay-klang/" class="related-card">
+      <div class="related-card-label">Artikel Blog</div>
+      <div class="related-card-title">Cara Tempah Farmstay di Klang: Panduan Lengkap</div>
+    </a>
+    <a href="/blog/farmstay-vs-glamping-malaysia/" class="related-card">
+      <div class="related-card-label">Artikel Blog</div>
+      <div class="related-card-title">Farmstay vs Glamping Malaysia — Mana Satu Sesuai untuk Keluarga?</div>
+    </a>
+    <a href="/blog/weekend-getaway-near-kl/" class="related-card">
+      <div class="related-card-label">Artikel Blog</div>
+      <div class="related-card-title">Weekend Getaway dari KL Bawah 2 Jam — 5 Pilihan Terbaik</div>
+    </a>
+  </div>
   </div>
 </section>
 
