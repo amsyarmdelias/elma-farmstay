@@ -55,8 +55,11 @@
     </script>
 
 <!-- Preload critical assets -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" as="style">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="media/pool_new2.jpg" as="image" fetchpriority="high">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:ital,wght@0,400;1,400&display=swap"></noscript>
 
 <style>
   :root {
@@ -505,7 +508,7 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline poster="media/pool_new2.jpg" aria-label="Video suasana Elma Farmstay">
+    <video autoplay muted loop playsinline preload="none" poster="media/pool_new2.jpg" aria-label="Video suasana Elma Farmstay">
       <source src="media/IMG_6633.mp4" type="video/mp4">
     </video>
   </div>
@@ -1098,19 +1101,4 @@
     document.getElementById('calDays').innerHTML = html;
   }
 
-  function pad(n){ return n<10?'0'+n:n; }
-
-  window.calGo = function(dir){
-    mo += dir;
-    if(mo>11){ mo=0; yr++; }
-    if(mo< 0){ mo=11; yr--; }
-    load();
-  };
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else { init(); }
-})();
-</script>
-</body>
-</html>
+  function pad(n){ return n<10?'0'+n
